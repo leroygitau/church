@@ -1122,6 +1122,30 @@
             resetLabels([layer_StJoachim_8]);
         });
 
+            var orangeIcon = L.icon({
+    iconUrl: 'images/leaf-orange.png',
+    shadowUrl: 'images/leaf-shadow.png',
+
+    iconSize:     [38, 95], // size of the icon
+    shadowSize:   [50, 64], // size of the shadow
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    shadowAnchor: [4, 62],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+
+var greenIcon = L.icon({
+    iconUrl: 'images/leaf-green.png',
+    shadowUrl: 'images/leaf-shadow.png',
+
+    iconSize:     [38, 95], // size of the icon
+    shadowSize:   [50, 64], // size of the shadow
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    shadowAnchor: [4, 62],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+
+
+            
         var popup = L.popup({
     maxWidth:700
             })
@@ -1136,11 +1160,59 @@
                   .setContent('Consolata Kahawa Farmer CC.  <img src="images/pic3.jpg"/> <img src="images/pic4.jpg"/>')
                   .openOn(map);
 
+ var popup3 = L.popup({
+    maxWidth:350
+            })
+            .setLatLng([-1.189114, 36.887605]  )
+            .setContent('Property Section<br>House 8<br> Family of Thomas Kimani')
+            .openOn(map);
 
+            var popup4 = L.popup({
+    maxWidth:350
+            })
+            .setLatLng([-1.185143, 36.885382]  )
+            .setContent('Property Section<br>House 1<br> Family of Cliff Mbaabu')
+            .openOn(map);
+
+            var popup5 = L.popup({
+    maxWidth:350
+            })
+            .setLatLng([-1.187223, 36.890453]  )
+            .setContent('Single Property <br>Family of Winnie Korir')
+            .openOn(map);
+
+            var popup6 = L.popup({
+    maxWidth:350
+            })
+            .setLatLng([-1.189292, 36.886766]  )
+            .setContent('Single Property <br>Family of Chris Oseko')
+            .openOn(map);
+
+            var popup7 = L.popup({
+    maxWidth:350
+            })
+            .setLatLng([-1.191795, 36.891294]  )
+            .setContent('Single Property <br>Family of Norman Michira')
+            .openOn(map);
+
+            var popup8 = L.popup({
+    maxWidth:350
+            })
+            .setLatLng([-1.191285, 36.905216]  )
+            .setContent('Property section<br>House 12<br>Family of Edwin Mwai')
+            .openOn(map);
 
 
             L.marker([-1.1760285167970297,36.8766725063324]).addTo(map).bindPopup(popup);
             L.marker([-1.1911073602639635, 36.89691781997681]).addTo(map).bindPopup(popup2);
+            L.marker([-1.189114, 36.887605],{icon: orangeIcon}).addTo(map).bindPopup(popup3);
+            L.marker([-1.185143, 36.885382],{icon: orangeIcon}).addTo(map).bindPopup(popup4);
+            L.marker([-1.187223, 36.890453],{icon: greenIcon}).addTo(map).bindPopup(popup5);
+            L.marker([-1.189292, 36.886766],{icon: greenIcon}).addTo(map).bindPopup(popup6);
+            L.marker([-1.191795, 36.891294],{icon: greenIcon}).addTo(map).bindPopup(popup7);
+            L.marker([-1.191285, 36.905216],{icon: orangeIcon}).addTo(map).bindPopup(popup8);
+
+            
             function onLocationFound(e) {
                 var radius = e.accuracy;
 
