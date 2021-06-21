@@ -15,6 +15,24 @@
             padding: 0;
             margin: 0;
         }
+             .lgnd {
+    width: 250px;
+    font-size: 16px;
+    color: #333333;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    padding: 10px 14px;
+    background-color: rgba(245,245,220,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+.lgnd img {
+    width: 200px;
+    margin: auto;
+    display: block;
+}
+
+            
         </style>
         <title>Small Christian Communities</title>
     </head>
@@ -1133,6 +1151,25 @@
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 
+            let lgnd = L.control({position: "bottomleft"});
+lgnd.onAdd = function() {
+    let div = L.DomUtil.create("div", "lgnd");
+    div.innerHTML = 
+        '<p><b>Jumuiya in Consolata Kahawa Farmers and St. Joseph Allamano</b></p><hr>' +
+        'Map made by:' +
+        '<p><ul>' +
+        '<li>Leroy Gitau, UoN  </li>' +
+        '<li>Jasper Mwenda, Supervisor</li>' +
+        '</ul></p>' +
+        'The Jumuiya layer have a <b>popup</b>. ' + 
+        'Click on them to see it!<hr>' +
+        'Created with the Leaflet library and google maps<br>' +
+        '<img src="images/uon.jpg">';
+    return div;
+};
+lgnd.addTo(map);
+
+            
 var greenIcon = L.icon({
     iconUrl: 'images/leaf-green.png',
     shadowUrl: 'images/leaf-shadow.png',
